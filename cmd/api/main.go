@@ -27,7 +27,10 @@ func main() {
 	AtivosController := controller.NewAtivosController(AtivosUseCase)
 
 	server.GET("/minhas-metas", MinhasMetasController.GetMinhasMetas)
+
 	server.GET("/ativos", AtivosController.GetAtivos)
+	server.POST("/ativo", AtivosController.CreateAtivo)
+	server.GET("/ativo/:id", AtivosController.GetAtivoById)
 
 	server.Run(":8080")
 }
